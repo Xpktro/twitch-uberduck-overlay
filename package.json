@@ -1,0 +1,23 @@
+{
+  "name": "uberduck-channel-points",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "rollup -c --watch",
+    "build": "rm -rf ./dist && NODE_ENV=production rollup -c"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^2.75.7",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-minify-html": "^0.1.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "twitch": "^4.6.7",
+    "twitch-pubsub-client": "^4.6.7",
+    "howler": "^2.2.3"
+  }
+}
