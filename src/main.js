@@ -3,6 +3,8 @@ import { StaticAuthProvider, RefreshableAuthProvider } from "twitch-auth";
 import { PubSubClient } from "twitch-pubsub-client";
 import { Howl } from "howler";
 
+const CORS_PROXY = "https://try.readme.io/";
+
 const log = (what) => {
   const node = document.createElement("p");
   node.innerHTML = what;
@@ -26,7 +28,7 @@ window.onload = async () => {
   const uberduck = (voiceName, speech) => {
     const voice = voicemap[voiceName];
     if (!voice) return;
-    fetch(`https://try.readme.io/https://api.uberduck.ai/speak-synchronous`, {
+    fetch(`${CORS_PROXY}https://api.uberduck.ai/speak-synchronous`, {
       method: "POST",
       body: JSON.stringify({ speech, voice }),
       headers: {
