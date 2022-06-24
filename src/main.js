@@ -60,7 +60,11 @@ window.onload = async () => {
       clientSecret,
       refreshToken,
       onRefresh: (token) => {
-        window.localStorage.setItem("token", JSON.stringify(token));
+        const oldToken = JSON.parse(window.localStorage.getItem("token"));
+        window.localStorage.setItem(
+          "token",
+          JSON.stringify({ ...oldToken, ...token })
+        );
       },
     }
   );
